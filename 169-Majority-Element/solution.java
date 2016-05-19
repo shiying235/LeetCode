@@ -18,23 +18,18 @@ public class Solution {
 
 //-----------Function 3: HashMap-------------------------------
         Map hm=new HashMap();
-        int main=nums[0];
-        int max=1;
+        int majority=nums[0];
         for(int i=0;i<nums.length;i++){
-            if(hm.get(nums[i])!=null){
-                int num=(int)hm.get(nums[i]);
-                if(num+1>nums.length/2) return nums[i];
-                hm.put(nums[i],num+1);
-                if(num+1>max){
-                    if(main!=nums[i]){
-                    main=nums[i];
-                    max=num+1;
-                    }else max++;
+            if(hm.containsKey(nums[i])){
+                hm.put(nums[i],(int)hm.get(nums[i])+1);
+                if((int)hm.get(nums[i])>nums.length/2){
+                    majority=nums[i];
+                    break;
                 }
             }
             else hm.put(nums[i],1);
         }
-        return main;
+        return majority;
     }
     
 }
