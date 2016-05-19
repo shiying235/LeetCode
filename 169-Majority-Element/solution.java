@@ -18,10 +18,12 @@ public class Solution {
 
 //-----------Function 3: HashMap-------------------------------
         Map hm=new HashMap();
+        int main=nums[0];
         for(int i=0;i<nums.length;i++){
             if((int)hm.get(nums[i])>=nums.length/2) return nums[i];
             hm.put(nums[i],hm.get(nums[i]+1));
         }
+        return main;
     }
     
     // public int findMajority(int start,int end,int[] nums){
