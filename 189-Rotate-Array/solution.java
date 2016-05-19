@@ -1,5 +1,6 @@
 public class Solution {
     public void rotate(int[] nums, int k) {
+        k %= nums.length;
         int[] earray= new int[];
         for(int i=0;i<k;i++)
             earray[i]=nums[i+nums.length-k];
