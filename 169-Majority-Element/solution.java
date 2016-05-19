@@ -1,7 +1,7 @@
 public class Solution {
     public int majorityElement(int[] nums) {
         Arrays.sort(nums);
-        return nums[n/2];
+        return nums[nums.length/2];
         //return findMajority(0,nums.length-1,nums);
     }
     
