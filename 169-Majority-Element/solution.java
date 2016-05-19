@@ -19,19 +19,15 @@ public class Solution {
 //-----------Function 3: HashMap-------------------------------
         Map hm=new HashMap();
         int main=nums[0];
+        int max=1;
         for(int i=0;i<nums.length;i++){
-            if((int)hm.get(nums[i])>=nums.length/2) return nums[i];
-            hm.put(nums[i],hm.get(nums[i]+1));
+            if(hm.get(nums[i])!=null){
+                hm.put(nums[i],hm.get(nums[i]+1));
+                if((int)hm.get(nums[i])>nums.length/2) return nums[i];
+            }
+            else hm.put(nums[i],1);
         }
         return main;
     }
     
-    // public int findMajority(int start,int end,int[] nums){
-    //     int length=end-start;
-    //     if(length<2&&nums!=null) return nums[start];
-    //     int sub1=findMajority(start,start+length/2,nums);
-    //     int sub2=findMajority(start+length/2+1,end,nums);
-    //     if(sub1==sub2) return sub1;
-        
-    // }
 }
