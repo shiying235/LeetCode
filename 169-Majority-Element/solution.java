@@ -25,7 +25,7 @@ public class Solution {
                 int num=(int)hm.get(nums[i]);
                 if(num+1>nums.length/2) return nums[i];
                 hm.put(nums[i],num+1);
-                if(num+1>max]){
+                if(num+1>max){
                     if(main!=nums[i]){
                     main=nums[i];
                     max=num+1;
