@@ -5,16 +5,23 @@ public class Solution {
         // return nums[nums.length/2];
 
 //------------Function 2: vote algorithm-----------------------
-        int main=nums[0];
-        int count=0;
+    //     int main=nums[0];
+    //     int count=0;
+    //     for(int i=0;i<nums.length;i++){
+    //         if(count==0){
+    //             main =nums[i];
+    //             count++;
+    //         }else if(main==nums[i]) count++;
+    //         else count--;
+    //     }
+    //   return main;
+
+//-----------Function 3: HashMap-------------------------------
+        Map<Integer> hm=new HashMap<Integer>();
         for(int i=0;i<nums.length;i++){
-            if(count==0){
-                main =nums[i];
-                count++;
-            }else if(main==nums[i]) count++;
-            else count--;
+            if(hm.get(nums[i])>=nums.length/2) return nums[i];
+            hm.put(nums[i],hm.get(nums[i]+1));
         }
-       return main; 
     }
     
     // public int findMajority(int start,int end,int[] nums){
