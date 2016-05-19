@@ -22,16 +22,15 @@ public class Solution {
         int max=1;
         for(int i=0;i<nums.length;i++){
             if(hm.get(nums[i])!=null){
-                hm.put(nums[i],hm.get(nums[i]+1));
-                if((int)hm.get(nums[i])>nums.length/2){
-                    return nums[i];
-                }else if((int)hm.get(nums[i])>max&&main!=nums[i]){
+                int num=(int)hm.get(nums[i]);
+                if(num+1>nums.length/2) return nums[i];
+                hm.put(nums[i],num+1);
+                if(num+1>max]){
+                    if(main!=nums[i]){
                     main=nums[i];
-                    max=(int)hm.get(nums[i]);
-                }else{
-                    max++;
+                    max=num+1;
+                    }else max++;
                 }
-                
             }
             else hm.put(nums[i],1);
         }
