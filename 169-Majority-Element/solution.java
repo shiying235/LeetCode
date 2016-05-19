@@ -23,7 +23,15 @@ public class Solution {
         for(int i=0;i<nums.length;i++){
             if(hm.get(nums[i])!=null){
                 hm.put(nums[i],hm.get(nums[i]+1));
-                if((int)hm.get(nums[i])>nums.length/2) return nums[i];
+                if((int)hm.get(nums[i])>nums.length/2){
+                    return nums[i];
+                }else if((int)hm.get(nums[i])>max&&main!=nums[i]){
+                    main=nums[i];
+                    max=hm.get(nums[i]);
+                }else{
+                    max++;
+                }
+                
             }
             else hm.put(nums[i],1);
         }
