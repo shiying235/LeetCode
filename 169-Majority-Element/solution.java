@@ -27,7 +27,7 @@ public class Solution {
                     return nums[i];
                 }else if((int)hm.get(nums[i])>max&&main!=nums[i]){
                     main=nums[i];
-                    max=hm.get(nums[i]);
+                    max=(int)hm.get(nums[i]);
                 }else{
                     max++;
                 }
