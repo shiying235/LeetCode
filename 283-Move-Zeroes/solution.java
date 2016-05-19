@@ -8,7 +8,7 @@ public class Solution {
         //     }else if(nums[j]!=0) j++; 
             
         // }
-        //if(nums.length<2) return null;
+        if(nums.length<2) return;
         int count=0;
         for(int i=0;i<nums.length;i++){
             if(nums[i]!=0){
