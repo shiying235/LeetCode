@@ -17,7 +17,7 @@ public class Solution {
     //   return main;
 
 //-----------Function 3: HashMap-------------------------------
-        Map<Integer> hm=new HashMap<Integer>();
+        Map<> hm=new HashMap<>();
         for(int i=0;i<nums.length;i++){
             if(hm.get(nums[i])>=nums.length/2) return nums[i];
             hm.put(nums[i],hm.get(nums[i]+1));
