@@ -11,8 +11,8 @@ public class Solution {
             else tMap.put(tArray[i],1);
         }
         if(sMap.size()==tMap.size()){
-            HashMap sList = (HashMap)sMap.values();
-            HashMap tList = (HashMap)tMap.values();
+            List<Integer> sList = (List<Integer>)sMap.values();
+            List<Integer> tList = (List<Integer>)tMap.values();
             if(sList==tList) return true;
             else return false;
             // Set set=tMap.keySet();
