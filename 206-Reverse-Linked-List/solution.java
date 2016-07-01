@@ -13,7 +13,7 @@ public class Solution {
             ListNode next=head.next;
             head.next=newHead;
             newHead=head;
-            next=head;
+            head=next;
         }
         return newHead;
     }
