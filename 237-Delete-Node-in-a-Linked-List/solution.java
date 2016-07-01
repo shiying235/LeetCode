@@ -11,6 +11,6 @@ public class Solution {
         while(node.next!=null){
             node.val =node.next.val;
         }
-        node=null;
+      //  node=null;
     }
 }
