@@ -14,6 +14,10 @@ public class Solution {
             else if(ln.val==ln.next.val) ln.next=ln.next.next;
             else ln=ln.next;
         }
+        // while(ln.next!=null){
+        //     if(ln.val==ln.next.val) ln.next=ln.next.next;
+        //     else ln=ln.next;
+        // }
         return head;
     }
 }
