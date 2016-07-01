@@ -8,23 +8,30 @@
  */
 public class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode current=l1;
-        ListNode next=current.next;
-        while(current!=null&&l2!=null){
-            if(next.val>=l2.val&&current.val<=l2.val){
-                ListNode ln = current.next;
-                current.next = new ListNode(l2.val);
-                current.next.next=current.next;
-                l2=l2.next;
+        ListNode head=new ListNode(-1);
+        ListNode p=head;
+        while(l1!=null&&l2!=null){
+            if(l1.val<=l2.val){
+                p.next=l1;
+                p=p.next;
+                l1=l1.next;
             }
-            current=current.next;
-            next=current.next;
+            else{
+                p.next=l2;
+                p=p.next;
+                l2=l2.next
+            }
+        }
+        while(l1!=null){
+            p=l1;
+            l1=l1.next;
+            p=p.next;
         }
         while(l2!=null){
-            current.next=new ListNode(l2.val);
-            current=current.next;
+            p=l2;
             l2=l2.next;
+            p=p.next;
         }
-        return l1;
+        return head.next;
     }
 }
