@@ -27,7 +27,7 @@ public class Solution {
         }
         while(l2!=null){
             previous=current;
-            current=new ListNode(l1.val);
+            current=new ListNode(l2.val);
             previous.next=current;
             current=current.next;
             previous=previous.next;
