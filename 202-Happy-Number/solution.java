@@ -9,7 +9,8 @@ public class Solution {
             int index=num;
             int newNum =0;
             while(index<10){
-               newNum +=  (int)Math.sqrt(index%10);
+                newNum +=  (index%10)*(index%10);
+            //   newNum +=  (int)Math.sqrt(index%10);
                index=index/10;
            }
             num=newNum;
