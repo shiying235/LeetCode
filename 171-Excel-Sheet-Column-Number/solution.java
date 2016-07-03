@@ -9,7 +9,7 @@ public class Solution {
         // return sum;
         
         int sum=0;
-        for(int i=0;i<s.size();i++){
+        for(int i=0;i<s.length();i++){
             sum *= 26;
             sum += (s.charAt(i)-'A')+1;
         }
