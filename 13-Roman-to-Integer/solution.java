@@ -47,7 +47,7 @@ public class Solution {
           
         int pivot = table.get(s.charAt(s.length()-1));
         for(int i=s.length()-2;i>=0;i++){
-            int curr =table.get(i);
+            int curr =table.get(s.charAt(i));
             if(curr>=pivot) sum += pivot;
             else sum -= pivot;
             pivot=curr;
