@@ -4,14 +4,16 @@ public class Solution {
         // rules:位于大数的后面时就作为加数；位于大数的前面就作为减数
         //eg：Ⅲ=3,Ⅳ=4,Ⅵ=6,ⅩⅨ=19,ⅩⅩ=20,ⅩLⅤ=45,MCMⅩⅩC=1980
         //"DCXXI"
-        HashMap<Character, Integer> table =new HashMap<Character, Integer>();
-        table.put('I',1);
-        table.put('V',5);
-        table.put('X',10);
-        table.put('L',50);
-        table.put('C',100);
-        table.put('D',500);
-        table.put('M',1000);
+        
+        
+        // HashMap<Character, Integer> table =new HashMap<Character, Integer>();
+        // table.put('I',1);
+        // table.put('V',5);
+        // table.put('X',10);
+        // table.put('L',50);
+        // table.put('C',100);
+        // table.put('D',500);
+        // table.put('M',1000);
         
         //int sum=0;
         // int j=0;
@@ -44,15 +46,50 @@ public class Solution {
         //         }
         //     }
         // }
+         
+         
           
-        int sum = table.get(s.charAt(s.length()-1));
-        int pivot =sum;
-        for(int i=s.length()-2;i>=0;i--){
-            int curr =table.get(s.charAt(i));
-            if(curr>=pivot) sum += curr;
-            else sum -= curr;
-            pivot=curr;
-        }
-        return sum;
+        // int sum = table.get(s.charAt(s.length()-1));
+        // int pivot =sum;
+        // for(int i=s.length()-2;i>=0;i--){
+        //     int curr =table.get(s.charAt(i));
+        //     if(curr>=pivot) sum += curr;
+        //     else sum -= curr;
+        //     pivot=curr;
+        // }
+        // return sum;
+        
+        
+        
+        
+        
+        int res = 0;
+	for (int i = s.length() - 1; i >= 0; i--) {
+		char c = s.charAt(i);
+		switch (c) {
+		case 'I':
+			res += (res >= 5 ? -1 : 1);
+			break;
+		case 'V':
+			res += 5;
+			break;
+		case 'X':
+			res += 10 * (res >= 50 ? -1 : 1);
+			break;
+		case 'L':
+			res += 50;
+			break;
+		case 'C':
+			res += 100 * (res >= 500 ? -1 : 1);
+			break;
+		case 'D':
+			res += 500;
+			break;
+		case 'M':
+			res += 1000;
+			break;
+		}
+	}
+	return res;
     }
 }
