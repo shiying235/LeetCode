@@ -13,7 +13,7 @@ public class Solution {
         table.put('D',500);
         table.put('M',1000);
         
-         int sum=0;
+        //int sum=0;
         // int j=0;
         // int curr=0;
         // for(int i=1;i<s.length()+1;i++){
@@ -45,11 +45,12 @@ public class Solution {
         //     }
         // }
           
-        int pivot = table.get(s.charAt(s.length()-1));
-        for(int i=s.length()-2;i>=0;i++){
+        int sum = table.get(s.charAt(s.length()-1));
+        int pivot =sum;
+        for(int i=s.length()-2;i>=0;i--){
             int curr =table.get(s.charAt(i));
-            if(curr>=pivot) sum += pivot;
-            else sum -= pivot;
+            if(curr>=pivot) sum += curr;
+            else sum -= curr;
             pivot=curr;
         }
         return sum;
