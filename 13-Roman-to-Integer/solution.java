@@ -13,39 +13,45 @@ public class Solution {
         table.put('D',500);
         table.put('M',1000);
         
-        int sum=0;
-        int j=0;
-        int curr=0;
-        for(int i=1;i<s.length()+1;i++){
-            if(i==s.length()){
-                sum = sum+ table.get(s.charAt(s.length()-1)) +curr;
-                curr=0;
-            }
-            else{
-            if(table.get(s.charAt(j))>table.get(s.charAt(i))){
-                if(curr!=0){
-                    sum +=curr;
-                    curr=0;
-                }
-                sum += table.get(s.charAt(j));
-                j++;
-            }
-            else if(table.get(s.charAt(j))<table.get(s.charAt(i))){
-               if(curr!=0){
-                    sum -=curr;
-                    curr=0;
-                }
-                sum -= table.get(s.charAt(j));
-                j++;
-            }
-            else{
-                curr += table.get(s.charAt(j));
-                j++;
-            }
-            }
+         int sum=0;
+        // int j=0;
+        // int curr=0;
+        // for(int i=1;i<s.length()+1;i++){
+        //     if(i==s.length()){
+        //         sum = sum+ table.get(s.charAt(s.length()-1)) +curr;
+        //         curr=0;
+        //     }
+        //     else{
+        //         if(table.get(s.charAt(j))>table.get(s.charAt(i))){
+        //             if(curr!=0){
+        //                 sum +=curr;
+        //                 curr=0;
+        //             }
+        //             sum += table.get(s.charAt(j));
+        //             j++;
+        //         }
+        //         else if(table.get(s.charAt(j))<table.get(s.charAt(i))){
+        //             if(curr!=0){
+        //                 sum -=curr;
+        //                 curr=0;
+        //             }
+        //             sum -= table.get(s.charAt(j));
+        //             j++;
+        //         }
+        //         else{
+        //             curr += table.get(s.charAt(j));
+        //             j++;
+        //         }
+        //     }
+        // }
+          
+        int pivot = table.get(s.charAt(s.length()-1));
+        for(int i=s.length()-2;i>=0;i++){
+            int curr =table.get(i);
+            if(curr>=pivot) sum += pivot;
+            else sum -= pivot;
+            pivot=curr;
         }
-        
-            
         return sum;
     }
 }
