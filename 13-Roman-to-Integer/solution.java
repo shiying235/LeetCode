@@ -17,7 +17,7 @@ public class Solution {
         int j=0;
         int curr=0;
         for(int i=1;i<s.length()+1;i++){
-            if(i==s.length()+1){
+            if(i==s.length()){
                 sum = sum+ table.get(s.charAt(s.length()-1)) +curr;
                 curr=0;
             }
