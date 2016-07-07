@@ -1,12 +1,14 @@
 public class Solution {
     public boolean isPalindrome(int x) {
-        if(10>x>=0) return true;
+        if(10>x&&x>=0) return true;
+        int k=x;
         int y=0;
-        while(x>0){
-            y=y*10+x%10;
-            x /= 10;
+        while(k>0){
+            y *= 10;
+            y += k%10;
+            k /= 10;
         }
-        if(y==x) return true;
+        if(y-x==0||y+x==0) return true;
         else return false;
     }
 }
