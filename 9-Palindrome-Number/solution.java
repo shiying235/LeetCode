@@ -8,7 +8,7 @@ public class Solution {
             y += k%10;
             k /= 10;
         }
-        if(y-x==0||y+x==0) return true;
+        if(y-x==0) return true;
         else return false;
     }
 }
