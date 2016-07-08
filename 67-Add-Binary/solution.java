@@ -1,6 +1,11 @@
 public class Solution {
     public String addBinary(String a, String b) {
-        
+        if(a == null || a.isEmpty()) {
+            return b;
+        }
+        if(b == null || b.isEmpty()) {
+            return a;
+        }
         char[] aarray = a.toCharArray();
         char[] barray = b.toCharArray();
         StringBuilder sb = new StringBuilder();
