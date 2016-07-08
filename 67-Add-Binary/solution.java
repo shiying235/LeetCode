@@ -12,7 +12,7 @@ public class Solution {
             int ia = lena > -1 ? Character.getNumericValue(aarray[lena--]):0;
             int ib = lenb > -1 ? Character.getNumericValue(barray[lenb--]):0;
             int result =  ia ^ ib ^ curr;
-            curr = ((ia + ib) > 1)) ? 1 : 0; 
+            curr = ((ia + ib + curr) > 1) ? 1 : 0; 
             sb.append( result);
             
         }
